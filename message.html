@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>My Love ❤️</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="love-bg">
 
-  <div class="page">
+  <canvas id="hearts"></canvas>
 
-    <!-- Section 1 -->
+  <div class="page fade-in">
+
+    <!-- My Message -->
     <section class="card">
       <h2>💌 MY Message :</h2>
       <p>
@@ -20,25 +23,30 @@
       </p>
     </section>
 
-    <!-- Section 2 -->
+    <!-- Our Memories -->
     <section class="card">
       <h2>📸 Our Memories</h2>
-      <input type="file" accept="image/*">
+      <img src="PUT_IMAGE_LINK_HERE" alt="Our Memory">
     </section>
 
-    <!-- Section 3 -->
+    <!-- Special Video -->
     <section class="card">
       <h2>🎥 Special Video</h2>
-      <input type="file" accept="video/*">
+      <video controls playsinline>
+        <source src="PUT_VIDEO_LINK_HERE" type="video/mp4">
+      </video>
     </section>
 
-    <!-- Section 4 -->
+    <!-- Our Song -->
     <section class="card">
       <h2>🎶 Our Song</h2>
-      <input type="file" accept="audio/*">
+      <audio controls playsinline>
+        <source src="PUT_AUDIO_LINK_HERE" type="audio/mpeg">
+      </audio>
     </section>
 
   </div>
 
+  <script src="js/hearts.js"></script>
 </body>
 </html>
