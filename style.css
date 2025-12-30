@@ -1,76 +1,67 @@
-* {
-  font-family: 'Segoe UI', sans-serif;
-  box-sizing: border-box;
-}
+* { font-family:'Segoe UI',sans-serif; box-sizing:border-box; margin:0; padding:0; }
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
-/* Romantic Background */
+/* Backgrounds */
 .romantic-bg {
-  height: 100vh;
-  background: linear-gradient(to right, #ff758c, #ff7eb3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height:100vh;
+  background: linear-gradient(135deg,#ff758c,#ff7eb3);
+  background-image: url('https://i.ibb.co/5rFZbRf/romantic-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
+.love-bg {
+  min-height:100vh;
+  background: linear-gradient(135deg,#ff9a9e,#fecfef);
+  background-image: url('https://i.ibb.co/fGzv6Nk/romantic-bg2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Hearts canvas */
+canvas { position: fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+
+/* Login box */
 .container {
-  background: rgba(255,255,255,0.9);
-  padding: 40px;
-  border-radius: 20px;
-  text-align: center;
-  width: 350px;
+  position: relative; z-index:2;
+  background: rgba(255,255,255,0.92);
+  padding:35px;
+  border-radius:25px;
+  text-align:center;
+  width:360px;
+  margin:auto;
+  top:20%;
 }
+.container h1 { color:#e60073; }
+input, button { width:100%; padding:12px; margin:10px 0; border-radius:20px; border:none; }
+button { background:#e60073; color:white; cursor:pointer; }
+button:hover { background:#c90063; }
+#error-msg { color:red; }
 
-.container h1 {
-  color: #e60073;
-  margin-bottom: 20px;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-}
-
-button {
-  background: #e60073;
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background: #cc005f;
-}
-
-#error-msg {
-  color: red;
-  margin-top: 10px;
-}
-
-/* Second Page */
-.page {
-  padding: 30px;
-  background: #ffe6f0;
-}
+/* Page layout */
+.page { position:relative; z-index:2; padding:30px; }
 
 .card {
-  background: white;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  background:white; padding:20px; margin-bottom:20px;
+  border-radius:25px; box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
+.card h2 { color:#e60073; }
+.card p { line-height:1.8; }
+img, video { width:100%; border-radius:15px; margin-top:10px; }
+audio { width:100%; margin-top:10px; }
 
-.card h2 {
-  color: #e60073;
+/* Animation */
+.fade-in { animation: fade 1.5s ease; }
+@keyframes fade { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+/* Responsive */
+@media(max-width:768px) {
+  .container { width:90%; top:15%; }
+  .page { padding:15px; }
+  .card h2 { font-size:18px; }
+  .card p { font-size:15px; }
+  video { max-height:250px; object-fit:cover; }
 }
